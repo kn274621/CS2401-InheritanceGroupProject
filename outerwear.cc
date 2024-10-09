@@ -40,6 +40,7 @@ void Outerwear::input(std::istream &ins)
         char mychar;
         cout << "Has hood or not (y/n): ";
         ins >> mychar;
+        mychar = tolower(mychar);
         if (mychar == 'y')
         {
             hood = true;
@@ -49,6 +50,7 @@ void Outerwear::input(std::istream &ins)
 
         cout << "Has zipper or not (y/n): ";
         ins >> mychar;
+        mychar = tolower(mychar);
         if (mychar == 'y')
         {
             zipper = true;
@@ -58,33 +60,10 @@ void Outerwear::input(std::istream &ins)
 
         cout << "Select size (s/m/l): ";
         ins >> size;
+        size = tolower(size);
     }
     else
     {
-        /*string mystring;
-        while (ins.peek() == '\n' || '\r')
-            ins.ignore();
-        getline(ins, mystring);
-        if (mystring == "true" || mystring == "1")
-        {
-            hood = true;
-        }
-        else
-            hood = false;
-
-        while (ins.peek() == '\n' || '\r')
-            ins.ignore();
-        getline(ins, mystring);
-        if (mystring == "true" || mystring == "1")
-        {
-            zipper = true;
-        }
-        else
-            zipper = false;
-        while (ins.peek() == '\n' || '\r')
-            ins.ignore();
-        getline(ins, mystring);
-        size = mystring[0];*/
         char mychar;
         ins>>mychar;
         if(mychar=='y'){

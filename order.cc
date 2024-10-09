@@ -16,7 +16,7 @@ void Order::input(istream &ins, string dep)
         if (order_name == "")
         {
             cout << "Enter a name for the order: ";
-            ins >> order_name;
+            getline(ins, order_name, '\n');
         }
 
         if (dep == "Tops")

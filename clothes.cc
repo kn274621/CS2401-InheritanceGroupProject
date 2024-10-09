@@ -16,6 +16,8 @@ void Clothes::input(istream &ins)
         ins >> name;
         cout << "Enter color: ";
         ins >> color;
+        for (size_t i = 0; i < color.length(); i++)
+            color[i] = tolower(color[i]);
     }
     else
     {

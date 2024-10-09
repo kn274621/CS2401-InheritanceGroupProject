@@ -25,6 +25,7 @@ void Bottoms::input(std::istream &ins)
     {
         cout << "Are the pants shorts? (y/n): ";
         ins >> length;
+        length = tolower(length);
         if (length == 'y')
         {
             is_shorts = true;

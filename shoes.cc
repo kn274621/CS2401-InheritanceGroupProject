@@ -47,12 +47,16 @@ void Shoes::input(istream &ins)
     department = "Shoes";
     if (&ins == &cin)
     {
-        cout << "Enter size: ";
+        cout << "Enter size (#): ";
         ins >> size;
         cout << "Enter style (sneaker/sandal/boot): ";
         ins >> style;
+        for (size_t i = 0; i < style.length(); i++)
+            style[i] = tolower(style[i]);
         cout << "Enter height (ankle/calf/knee): ";
         ins >> height;
+        for (size_t i = 0; i < height.length(); i++)
+            height[i] = tolower(height[i]);
     }
     else
     {

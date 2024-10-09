@@ -45,8 +45,9 @@ int main()
     fin.open(filename.c_str());
 
     string tmp;
+    cin.ignore(10, '\n');
     cout << "Enter name for the current order: ";
-    cin >> tmp;
+    getline(cin, tmp, '\n');
 
     Order myorder(tmp);
 
@@ -64,8 +65,20 @@ int main()
         switch (choice)
         {
         case 1:
-            cout << "Which department would you like to get an item from?\n";
+            cout << "Which department would you like to get an item from?\n(Tops, Bottoms, Outerwear, Shoes)\n";
             cin >> dep;
+            for(size_t i = 0; i < dep.length(); i++)
+            {
+                if (i == 0)
+                    dep[i] = toupper(dep[i]);
+                else
+                    dep[i] = tolower(dep[i]);
+            }  
+            while(dep != "Tops" && dep != "Bottoms" && dep != "Outerwear" && dep != "Shoes")
+            {
+                cout << "Invalid department. Please pick from Tops, Bottoms, Outerwear, or Shoes.\n";
+                cin >> dep;
+            }
             add_to_list(dep, myorder);
             break;
         case 2:

@@ -50,8 +50,11 @@ void Tops::input(istream &ins)
 
         cout << "Enter the size (s/m/l): ";
         ins >> size;
+        size = tolower(size);
         cout << "Enter the sleeve type (long/short/none): ";
         ins >> sleeves;
+        for (size_t i = 0; i < sleeves.length(); i++)
+            sleeves[i] = tolower(sleeves[i]);
     }
     else
     {
